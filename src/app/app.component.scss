@@ -1,0 +1,19 @@
+.body {
+    /* background-color: aquamarine; */
+    /* background-color: #BB0099; */
+    /* background-color: rgb(25, 100, 210); */
+    /* background-color: rgba(150, 200, 0, 0.5); */
+    background-color: #3A1078;
+    color: #7968b3;
+    width: 100%;
+    height: auto;
+
+    & p {
+        font-size: 20px;
+    }
+
+    & span {
+        font-size: 30px;
+        color: rgb(211, 96, 96);
+    }
+}
