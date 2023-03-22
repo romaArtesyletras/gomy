@@ -136,3 +136,107 @@ input.control {
         padding-left: 35%;
     }
 }
+
+
+// Align
+.textTypes {
+    width: 50%;
+    margin: 0 auto;
+}
+.alineacion {
+    text-align: right;
+    text-align: center;
+    text-align: justify;
+    text-align: left;
+
+    text-shadow: 32px 18px 3px green;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    box-shadow: 4px 10px 8px orangered;
+    margin: 32px;
+    background-color: brown;
+}
+
+.btn {
+    width: 300px;
+    padding-bottom: 12px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.boxAnimated {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #000000;
+    transition: 1s;
+    animation: firstAnimation 5s infinite;
+    margin-bottom: 100px;
+}
+
+@keyframes firstAnimation {
+    0% {
+        scale: 1;
+        border: 2px solid blue;
+        background-color: yellowgreen;
+        position: relative;
+        left: 0px;
+    }
+    100% {
+        scale: 2;
+        border: 2px solid orange;
+        background-color: blueviolet;
+        position: relative;
+        left: 100px;
+    }
+}
+
+.contentCircle {
+    width: 200px;
+    height: 200px;
+    margin: 32px;
+    margin-bottom: 300px;
+}
+.circleRedAnimated {
+    box-shadow: 12px 12px 12px gray;
+
+    width: 25px;
+    height: 25px;
+
+    position: relative;
+    left: 0px;
+    top: 0px;
+
+    border-radius: 50px;
+
+    animation: circleMovement 10s infinite;
+}
+
+@keyframes circleMovement {
+    0% {
+        top: 0px;
+        left: 0px;
+    }
+    25% {
+        top: 0px;
+        left: 200px;
+        background-color: orangered;
+    }
+    50% {
+        left: 200px;
+        top: 200px;
+        background-color: purple;
+    }
+    75% {
+        left: 0px;
+        top: 200px;
+        background-color: pink;
+    }
+    100% {
+        left: 0px;
+        top: 0px;
+        background-color: red;
+    }
+}
