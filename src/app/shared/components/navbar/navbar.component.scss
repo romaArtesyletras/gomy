@@ -1,0 +1,180 @@
+$color_1: #f2f5f7;
+$color_2: #61DAFB;
+$color_3: #131418;
+$font-family_1: sans-serif;
+$background-color_1: #131418;
+$background-color_2: #61DAFB;
+$background-color_3: transparent;
+$background-color_4: #f2f5f7;
+
+* {
+	margin: 0;
+	padding: 0;
+	color: $color_1;
+	font-family: $font-family_1;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+.nav {
+	height: 6rem;
+	width: 100vw;
+	background-color: $background-color_1;
+	box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+	display: flex;
+	position: fixed;
+	z-index: 10;
+
+    &__logo {
+        padding: 1vh 1vw;
+        text-align: center;
+        img {
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+
+    &__links {
+        display: flex;
+        list-style: none;
+        width: 90vw;
+        padding: 0px 14.7vw;
+        justify-content: space-evenly;
+        align-items: center;
+        text-transform: uppercase;
+
+        & li {
+            & a {
+                text-decoration: none;
+                margin: 0 0.7vw;
+                &:hover {
+                    color: $color_2;
+                    &::before {
+                        background-color: #eaeaea;
+                    }
+                }
+                &::before {
+                    content: "";
+                    display: block;
+                    height: 46px;
+                    width: 10px;
+                    background-color: #7a7a7a;
+                    position: absolute;
+                    transition: all ease-in-out 250ms;
+                    margin: -12px 0px 0px -33%;
+                }
+            }
+            position: relative;
+        }
+    }
+
+    &__hamburger {
+        div {
+            width: 30px;
+            height: 3px;
+            background: #f2f5f7;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        display: none;
+    }
+
+    &__toggle {
+        &.line1 {
+            transform: rotate(-45deg) translate(-5px,6px);
+        }
+        &.line2 {
+            transition: all 0.7s ease;
+            width: 0;
+        }
+        &.line3 {
+            transform: rotate(45deg) translate(-5px,-6px);
+        }
+    }
+
+    &__login {
+        &--button {
+            background-color: $background-color_3;
+            border: 1.5px solid #f2f5f7;
+            border-radius: 2em;
+            padding: 0.6rem 0.8rem;
+            margin-left: 2vw;
+            font-size: 1rem;
+            cursor: pointer;
+            &:hover {
+                color: $color_3;
+                background-color: $background-color_4;
+                border: 1.5px solid #f2f5f7;
+                transition: all ease-in-out 350ms;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 800px) {
+	.nav {
+		position: fixed;
+		z-index: 3;
+
+        &__hamburger {
+            display: block;
+            position: absolute;
+            cursor: pointer;
+            right: 5%;
+            top: 50%;
+            transform: translate(-5%, -50%);
+            z-index: 2;
+            transition: all 0.7s ease;
+        }
+
+        &__links {
+            position: fixed;
+            background: #131418;
+            height: 100vh;
+            width: 100%;
+            flex-direction: column;
+            clip-path: circle(50px at 90% -20%);
+            -webkit-clip-path: circle(50px at 90% -10%);
+            transition: all 1s ease-out;
+            pointer-events: none;
+    
+            & li {
+                opacity: 0;
+                &:nth-child(1) {
+                    transition: all 0.5s ease 0.2s;
+                }
+                &:nth-child(2) {
+                    transition: all 0.5s ease 0.4s;
+                }
+                &:nth-child(3) {
+                    transition: all 0.5s ease 0.6s;
+                }
+                &:nth-child(4) {
+                    transition: all 0.5s ease 0.7s;
+                }
+                &:nth-child(5) {
+                    transition: all 0.5s ease 0.8s;
+                }
+                &:nth-child(6) {
+                    transition: all 0.5s ease 0.9s;
+                    margin: 0;
+                }
+                &:nth-child(7) {
+                    transition: all 0.5s ease 1s;
+                    margin: 0;
+                }
+            }
+
+            &.open {
+                clip-path: circle(1000px at 90% -10%);
+                -webkit-clip-path: circle(1000px at 90% -10%);
+                pointer-events: all;
+            }
+        }
+	}
+
+	li.fade {
+		opacity: 1;
+	}
+}
