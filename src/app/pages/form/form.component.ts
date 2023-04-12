@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
+  
   title: string = "Romario";
   contador: number = 0;
+  estudiantes: string[] = [
+    "Romario","Daniela","Alejandro","Natalia","Luisa","Karen","Walter"
+  ];
 
   constructor(){}
 
@@ -43,5 +47,9 @@ export class FormComponent implements OnInit {
   checkSomeStuff(num: number, theNumber: number):boolean {
     if(num % 2 !== 0 && num == theNumber) return true;
     return false
+  }
+
+  celciusToFarenheit(celsius: number) {
+    return (celsius * 1.8) + 32
   }
 }

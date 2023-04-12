@@ -11,6 +11,7 @@
 <button (click)="reset()">Resetear</button>
 
 <h1>operaciones</h1>
+<h2>Farenheit = 10 Celcius = {{celciusToFarenheit(10)}}</h2>
 
 <!-- Modulo de porcentaje -->
 <!-- 2 % 2 = 0 -->
@@ -18,3 +19,15 @@
 <p>para saber si es par ({{ifEven(contador)}})</p>
 
 <p>para saber si es impar e igual a 5 ({{checkSomeStuff(contador, 5)}})</p>
+
+<h2>Recorriendo</h2>
+<br>
+<span>estudiantes -> {{estudiantes}}</span>
+<br><br>
+<span>{{estudiantes[1]}}</span>
+<br><br>
+<span>{{estudiantes.length}}</span>
+<br><br>
+<span>{{estudiantes[estudiantes.length - 1] }}</span>
+<br><br>
+<span>{{estudiantes.sort()}}</span>
