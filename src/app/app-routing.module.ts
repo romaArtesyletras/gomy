@@ -17,14 +17,6 @@ export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
 ];
 
-// @NgModule({
-//   imports: [
-//     RouterModule.forRoot(routes)
-//   ],
-//   exports: [ RouterModule ]
-// })
-// export class AppRoutingModule { }
-
 @NgModule({
   imports: [
       BrowserModule,

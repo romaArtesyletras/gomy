@@ -16,11 +16,11 @@ export class FormComponent implements OnInit {
   }
 
   increase() {
-    this.contador++;
+    if(this.contador >= 0) this.contador++;
   }
 
   decrease() {
-    if(this.contador >= 0) this.contador--;
+    if(this.contador > 0) this.contador--;
   }
 
   multiply(num: number) {
@@ -33,5 +33,15 @@ export class FormComponent implements OnInit {
 
   reset() {
     this.contador = 0;
+  }
+
+  ifEven(num: number):boolean {
+    if(num % 2 == 0) return true;
+    return false
+  }
+
+  checkSomeStuff(num: number, theNumber: number):boolean {
+    if(num % 2 !== 0 && num == theNumber) return true;
+    return false
   }
 }
