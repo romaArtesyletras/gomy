@@ -31,3 +31,46 @@
 <span>{{estudiantes[estudiantes.length - 1] }}</span>
 <br><br>
 <span>{{estudiantes.sort()}}</span>
+
+<br><br>
+
+<ul *ngIf="animales">
+    <li *ngFor="let animal of animales">{{ animal.nombre }}</li>
+</ul>
+
+<!-- Cards -->
+<div *ngIf="animales">
+    <div class="card" *ngFor="let animal of animales">
+        <div class="card__image">
+            <img [src]="animal.imagen" alt="" srcset="">
+        </div>
+        <div class="card__data">
+            <table>
+                <tr>
+                    <td class="property">{{animal.nombre}} ({{animal.peso_promedio}} kg)</td>
+                </tr>
+                <tr *ngIf="animal.numero_patas > 0">
+                    <td>
+                        <span class="value">
+                            Tiene {{animal.numero_patas}} 
+                            {{(animal.numero_patas > 1) ? "patas" : "pata"}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="value">Su color predominante es el {{animal.color_predominante}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="value"><span class="property">Su alimentación</span>: {{animal.alimentacion}}</span></td>
+                </tr>
+                <tr>
+                    <td><span class="value"><span class="property">Su habitat</span>: {{animal.habitat}}</span></td>
+                </tr>
+
+                <tr>
+                    <td class="value" *ngIf="animal.volador">Volador</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

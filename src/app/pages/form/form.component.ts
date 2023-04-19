@@ -9,7 +9,7 @@ import { Animal } from 'src/app/core/models/animal';
 export class FormComponent implements OnInit {
   
   title: string = "Romario";
-  
+
   contador: number = 0;
 
   estudiantes: string[] = [
@@ -34,7 +34,7 @@ export class FormComponent implements OnInit {
       numero_patas: 4,
       color_predominante: "Beige",
       alimentacion: "Pasto",
-      habitat: "Montes Australianos",
+      habitat: "Montes Australianos.",
       volador: false
     },
     {
@@ -44,7 +44,7 @@ export class FormComponent implements OnInit {
       numero_patas: 2,
       color_predominante: "Blanco y gris",
       alimentacion: "Frutos, hojas, flores, hierbas, corteza y resina, pero que también es capaz de capturar y comer insectos, huevos y pequeños vertebrados.",
-      habitat: "Cañones rocosos, bosques espinosos y matorrales secos",
+      habitat: "Cañones rocosos, bosques espinosos y matorrales secos.",
       volador: false
     },
     {
@@ -74,7 +74,7 @@ export class FormComponent implements OnInit {
       numero_patas: 2,
       color_predominante: "Negro",
       alimentacion: "Frutas caídas, algunos hongos y pequeños animales.",
-      habitat: "Selvas tropicales de Australia y Nueva Guinea",
+      habitat: "Selvas tropicales de Australia y Nueva Guinea.",
       volador: false
     },
     {
