@@ -1,33 +1,22 @@
-<p>form works!</p>
+<app-navbar></app-navbar>
 
-<h1>{{title}}</h1>
+<div class="form">
 
-<h1>Contador {{contador}}</h1>
+  <div class="form__container">
+    <div class="form__container--content">
+      <div class="grid">
+        <div class="grid--item">1</div>
+        <div class="grid--item">2</div>
+        <div class="grid--item">3</div>
+        <div class="grid--item">4</div>
+        <div class="grid--item">5</div>
+        <div class="grid--item">6</div>
+        <div class="grid--item">7</div>
+        <div class="grid--item">8</div>
+        <div class="grid--item">9</div>
+      </div>
+    </div>
+  </div>
 
-<button (click)="increase()">Aumentar</button>
-<button (click)="decrease()">Restar</button>
-<button (click)="multiply(2)">Multiplicar</button>
-<button (click)="divide(2)">Dividir</button>
-<button (click)="reset()">Resetear</button>
 
-<h1>operaciones</h1>
-<h2>Farenheit = 10 Celcius = {{celciusToFarenheit(10)}}</h2>
-
-<!-- Modulo de porcentaje -->
-<!-- 2 % 2 = 0 -->
-<!-- 5 % 2 = 1 -->
-<p>para saber si es par ({{ifEven(contador)}})</p>
-
-<p>para saber si es impar e igual a 5 ({{checkSomeStuff(contador, 5)}})</p>
-
-<h2>Recorriendo</h2>
-<br>
-<span>estudiantes -> {{estudiantes}}</span>
-<br><br>
-<span>{{estudiantes[1]}}</span>
-<br><br>
-<span>{{estudiantes.length}}</span>
-<br><br>
-<span>{{estudiantes[estudiantes.length - 1] }}</span>
-<br><br>
-<span>{{estudiantes.sort()}}</span>
+</div>
