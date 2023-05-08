@@ -1,4 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:display=swap');
+
 body {
     margin: 0px;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+p, a, span {
+    font-weight: 300;
 }

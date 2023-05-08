@@ -1,48 +1,76 @@
 .form {
 
-  /* Center the div on large screens */
-  &__container {
-    margin-top: 122px;
-    
-    position:relative;
-    top: 0px;
-    left: 0px;
-
-    display: flex;
-    justify-content: center;
-
-    /* Style the div */
-    &--content {
-      width: 600px;
-      height: 200px;
-    }
+  &--logo {
+    padding: 32px;
   }
 
+  &__container {
+      margin-top: 122px;
+      position: relative;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      justify-content: center;
+
+      &--content {
+          width: 600px;
+          height: 200px;
+          
+          & p {
+              font-size: 18px;
+          }
+
+          & .header {
+            padding: 0px 16px;
+
+            & progress {
+              border-radius: 7px; 
+              width: 100%;
+              height: 5px;
+              box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+
+              &::-webkit-progress-bar {
+                background-color: rgb(242, 242, 242);
+                border-radius: 7px;
+              }
+
+              &::-webkit-progress-value {
+                background-color: #fe6188;
+                border-radius: 7px;
+                // box-shadow: 1px 1px 5px 3px rgba( 255, 0, 0, 0.8 );
+              }
+
+              &::-moz-progress-bar {
+                /* style rules */
+              }
+            }
+          }
+      }
+  }
 
   & .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
 
-    &--item {
-      background-color: #ccc;
-      margin: 16px;
-      height: 100px;
-      text-align: center;
-      line-height: 100px;
-      font-size: 24px;
-    }
-  }
-}
+      &--item {
+          cursor: pointer;
+          background-color: #fff;
+          border-radius: 5px;
+          border: 2px solid #000;
+          margin: 16px;
+          height: 100px;
+          text-align: center;
+          line-height: 100px;
+          font-size: 24px;
+          transition: 0.5s;
 
-/* Make the div full width on mobile screens */
-@media screen and (max-width: 768px) {
-  .form {
-    &__container {
-      justify-content: flex-start;
-      &--content {
-        width: 100%;
+          &:hover {
+            opacity: 1;
+            background-color:#fff;
+            color: #fe6188;
+            border-color: #fe6188;
+          }
       }
-    }
   }
 }

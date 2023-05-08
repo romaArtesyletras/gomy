@@ -1,22 +1,32 @@
-<app-navbar></app-navbar>
-
 <div class="form">
-
+  <div class="form--logo">
+    <a [routerLink]="['/']"><img src="/assets/sketch_logo.svg" alt="Logo Image" /></a>
+  </div>
   <div class="form__container">
     <div class="form__container--content">
-      <div class="grid">
-        <div class="grid--item">1</div>
-        <div class="grid--item">2</div>
-        <div class="grid--item">3</div>
-        <div class="grid--item">4</div>
-        <div class="grid--item">5</div>
-        <div class="grid--item">6</div>
-        <div class="grid--item">7</div>
-        <div class="grid--item">8</div>
-        <div class="grid--item">9</div>
+
+      <div class="header">
+        <div class="header__steps">
+          <progress value="10" max="100">33%</progress>
+        </div>
+        <div class="header--question">
+          <h2>¿Cual es el reto más grande que has experimentado al hacer ejercicio?</h2>
+          <p>Selecciona la opción con que más te identifiques. Nosotros te ayudaremos a quitar esa barrea.</p>
+        </div>
       </div>
+      
+      <div class="grid">
+        <a class="grid--item">Empezar</a>
+        <a class="grid--item">Inseguridad</a>
+        <a class="grid--item">Sin tiempo</a>
+        <a class="grid--item">No le gusta</a>
+        <a class="grid--item">Seguir</a>
+        <a class="grid--item">Impedimento</a>
+        <a class="grid--item">Aburrimiento</a>
+        <a class="grid--item">Sin energía</a>
+        <a class="grid--item">Otra</a>
+      </div>
+      
     </div>
   </div>
-
-
 </div>
