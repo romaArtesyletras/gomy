@@ -8,6 +8,8 @@ import { FormComponent } from './pages/form/form.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from './shared/shared.module';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { SharedModule } from './shared/shared.module';
     LoginComponent,
   ],
   imports: [
+    CommonModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     SharedModule
   ],

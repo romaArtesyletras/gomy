@@ -9,22 +9,21 @@
         <div class="header__steps">
           <progress value="10" max="100">33%</progress>
         </div>
-        <div class="header--question">
-          <h2>¿Cual es el reto más grande que has experimentado al hacer ejercicio?</h2>
-          <p>Selecciona la opción con que más te identifiques. Nosotros te ayudaremos a quitar esa barrea.</p>
-        </div>
       </div>
-      
-      <div class="grid">
-        <a class="grid--item">Empezar</a>
-        <a class="grid--item">Inseguridad</a>
-        <a class="grid--item">Sin tiempo</a>
-        <a class="grid--item">No le gusta</a>
-        <a class="grid--item">Seguir</a>
-        <a class="grid--item">Impedimento</a>
-        <a class="grid--item">Aburrimiento</a>
-        <a class="grid--item">Sin energía</a>
-        <a class="grid--item">Otra</a>
+
+      <div *ngFor="let question of questionsForm">
+        <div class="header">
+          <div class="header--question">
+            <h2>{{question.title}}</h2>
+            <p>{{question.description}}</p>
+          </div>
+        </div>
+        
+        <div *ngIf="question.options.length > 0">
+          <div class="grid">
+            <a  *ngFor="let option of question.options" class="grid--item">{{option.name}}</a>
+          </div>
+        </div>
       </div>
       
     </div>
