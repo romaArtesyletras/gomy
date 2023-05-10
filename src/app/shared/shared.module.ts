@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SingersComponent } from './components/singers/singers.component';
 
 // https://www.pluralsight.com/guides/using-shared-modules-in-angular - to know how to create a shared behaviour
 const componentsShared = [

@@ -9,6 +9,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { SingersComponent } from './shared/components/singers/singers.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CommonModule } from '@angular/common';
     FormComponent,
     SignupComponent,
     LoginComponent,
+    SingersComponent,
   ],
   imports: [
     AppRoutingModule,

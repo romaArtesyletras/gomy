@@ -7,11 +7,12 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
+import { FifaComponent } from './pages/fifa/fifa.component';
 
 // https://angular.io/tutorial/tour-of-heroes/toh-pt5 to create routes navigation
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'fifa', component: FifaComponent },
   { path: 'form', component: FormComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
