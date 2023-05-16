@@ -1,8 +1,9 @@
 interface OptionsQuestion {
   id: string;
   name: string;
-  description: string;
+  description?: string;
   icon?: string;
+  selected?: boolean;
 }
 
 export interface Question {

@@ -7,25 +7,38 @@
 
       <div class="header">
         <div class="header__steps">
-          <progress value="10" max="100">33%</progress>
+          <progress [value]="this.percentageAdvance" max="100">{{this.percentageAdvance}}%</progress>
         </div>
       </div>
 
-      <div *ngFor="let question of questionsForm">
-        <div class="header">
-          <div class="header--question">
-            <h2>{{question.title}}</h2>
-            <p>{{question.description}}</p>
+      <div *ngFor="let question of questionsForm; let i = index">
+
+        <div class="question" *ngIf="(i+1) == step && !question.completed">
+
+          <div class="question__header">
+            <div class="question__header--info">
+              <h2>{{question.title}}</h2>
+              <p>{{question.description}}</p>
+            </div>
           </div>
+          
+          <div class="question__options" *ngIf="question.options.length > 0">
+            <div class="grid">
+              <a  *ngFor="let option of question.options" class="grid--item">{{option.name}}</a>
+            </div>
+          </div>
+
+          <div class="question__continue">
+            <a class="question__continue--button" [routerLink]="['/form']">Continuar</a>
+          </div>
+          
         </div>
+
         
-        <div *ngIf="question.options.length > 0">
-          <div class="grid">
-            <a  *ngFor="let option of question.options" class="grid--item">{{option.name}}</a>
-          </div>
-        </div>
       </div>
       
+
     </div>
+
   </div>
 </div>

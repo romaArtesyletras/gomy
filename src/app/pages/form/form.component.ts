@@ -10,10 +10,13 @@ import { v4 as uuidv4 } from 'uuid';
 export class FormComponent implements OnInit {
 
   questionsForm!: Question[];
+  step: number = 1;
+  percentageAdvance: number = 0;
 
   constructor(){}
 
   ngOnInit(): void {
+    
     this.questionsForm = [
       {
         id: uuidv4(),
@@ -62,8 +65,67 @@ export class FormComponent implements OnInit {
             description: "Mantiene bajo de ánimo y sin energía."
           },
         ]
-      }
+      },
+      {
+        id: uuidv4(),
+        title: "Especialidad del entrenador",
+        description: "Selecciona lo importante para tí.",
+        completed: false,
+        options: [
+          {
+            id: uuidv4(),
+            name: "Manejo de peso"
+          },
+          {
+            id: uuidv4(),
+            name: "Movilidad y flexibilidad"
+          },
+          {
+            id: uuidv4(),
+            name: "Reducir fatiga"
+          },
+          {
+            id: uuidv4(),
+            name: "Calidad de vida"
+          },
+          {
+            id: uuidv4(),
+            name: "Entrenamiento de fuerza"
+          },
+          {
+            id: uuidv4(),
+            name: "Mejorar en deportes"
+          },
+          {
+            id: uuidv4(),
+            name: "Salud general"
+          },
+          {
+            id: uuidv4(),
+            name: "Ninguna"
+          },
+        ]
+      },
     ];
+
+    this.getPercentage()
+  }
+
+  continue() {
+    this.step += 1;
+    this.getPercentage()
+  }
+
+  getPercentage() {
+    var countCompleted = 0;
+    this.questionsForm.map(q => { 
+      if(q.completed) countCompleted++;
+    });
+    console.log(countCompleted);
+    
+    this.percentageAdvance = 100 * (countCompleted / this.questionsForm.length)
+    console.log(this.percentageAdvance);
+    
   }
 
 }

@@ -45,6 +45,47 @@
               }
             }
           }
+          
+          & .question {
+            display: block;
+
+            &__header {
+              &--info {
+
+              }
+            }
+
+            &__options {
+
+            }
+
+            &__continue {
+              display: block;
+              
+              &--button {
+                margin-top: 16px;
+                width: 100%;
+                display: block;
+                background-color: #fe6188;
+                border-radius: 5px;
+                border: 2px solid #fc537e;
+                cursor: pointer;
+                color: #ffffff;
+                font-family: Arial;
+                font-size: 32px;
+                padding: 24px 0;
+                text-decoration: none;
+                transition: 0.5s;
+                text-align: center;
+    
+                &:hover {
+                    opacity: 1;
+                    background-color:#fff;
+                    color: #fe6188;
+                }
+              }
+            }
+          }
       }
   }
 
