@@ -8,14 +8,14 @@
         </div>
         <div class="singers__form--input">
             <label for="name">Edad</label>
-            <input type="text" name="age" id="age" [(ngModel)]="age">
+            <input type="number" name="age" id="age" [(ngModel)]="age">
         </div>
         <div class="singers__form--checkbox">
             <label for="name">Vivo</label>
             <input type="checkbox" name="alive" id="alive" [(ngModel)]="alive">
         </div>
 
-        <button class="singers__form--btn">
+        <button class="singers__form--btn" (click)="addSinger()">
             Agregar
         </button>
     </div>

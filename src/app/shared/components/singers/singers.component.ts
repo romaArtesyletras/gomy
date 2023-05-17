@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Singer } from 'src/core/models/Singer';
+import { Component, OnInit } from '@angular/core'
+import { Singer } from 'src/core/models/Singer'
 
 @Component({
   selector: 'singers',
@@ -8,11 +8,11 @@ import { Singer } from 'src/core/models/Singer';
 })
 export class SingersComponent implements OnInit {
 
-  name!: string;
-  age!: string;
-  alive!: boolean;
+  name!: string
+  age: number = 0
+  alive!: boolean
 
-  cantantes!: Singer[];
+  cantantes!: Singer[]
 
   constructor() {
 
@@ -109,14 +109,29 @@ export class SingersComponent implements OnInit {
     console.table(this.cantantes)
 
     let nombres = this.cantantes.map(s => s.name.toUpperCase())
-    console.table(nombres.sort());
-    console.table(nombres.reverse());
+    console.table(nombres.sort())
+    console.table(nombres.reverse())
 
     let raizCuadrada = this.cantantes.map(a => Math.sqrt(a.age))
-    console.table(raizCuadrada.sort());
+    console.table(raizCuadrada.sort())
 
     let potencias = this.cantantes.map(a => Math.pow(a.age, 2))
-    console.table(potencias.sort());
+    console.table(potencias.sort())
+  }
+
+  addSinger() {
+    let singer: Singer = {
+      name: this.name,
+      age: this.age,
+      isAlive: this.alive
+    }
+
+    if(this.name != "" && this.age > 0) {
+      this.cantantes.push(singer)
+      this.name = ""
+      this.age = 0
+      this.alive = false
+    }
   }
 
   

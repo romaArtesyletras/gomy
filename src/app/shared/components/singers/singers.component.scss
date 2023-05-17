@@ -1,10 +1,51 @@
 .singers {
     &__form {
+        text-align: center;
         display: block;
+        &--title {
+            margin-left: 32px;
+            font-size: 32px;
+        }
 
         &--input {
-            border-radius: 5px;
-            padding: 8px;
+            margin: 32px;
+            & label {
+                font-size: 24px;
+            }
+            & input {
+                margin-left: 16px;
+                border-radius: 5px;
+                padding: 8px;
+            }
+        }
+
+        &--checkbox {
+            margin: 32px;
+            & label {
+                font-size: 24px;
+            }
+        }
+
+        &--btn {
+            margin-left: 32px;
+            background-color: #32C5D2;
+            border-radius:28px;
+            border:1px solid #198d97;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:17px;
+            padding:16px 31px;
+            text-decoration:none;
+            &:hover {
+                background-color:#fff;
+                color: #32C5D2;
+            }
+            &:active {
+                position:relative;
+                top:1px;
+            }
         }
     }
     
@@ -13,8 +54,11 @@
         flex-wrap: wrap;
         justify-content: center;
         align-items: stretch;
+        
+        margin: 32px;
 
         &--item{
+            margin: 16px;
             display: inline-flex;
             flex-direction: row;
             background-color: #e5e5e5;
