@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SharedModule } from './shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { SingersComponent } from './shared/components/singers/singers.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,11 @@ import { SingersComponent } from './shared/components/singers/singers.component'
     SingersComponent,
   ],
   imports: [
+    BrowserModule,
     AppRoutingModule,
     SharedModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

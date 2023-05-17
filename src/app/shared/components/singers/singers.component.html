@@ -1,4 +1,29 @@
 <div class="singers">
-    <h2>Cantantes</h2>
-    
+    <div class="singers__form">
+        <h2 class="singers__form--title">Agregar cantante</h2>
+
+        <div class="singers__form--input">
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" [(ngModel)]="name">
+        </div>
+        <div class="singers__form--input">
+            <label for="name">Edad</label>
+            <input type="text" name="age" id="age" [(ngModel)]="age">
+        </div>
+        <div class="singers__form--checkbox">
+            <label for="name">Vivo</label>
+            <input type="checkbox" name="alive" id="alive" [(ngModel)]="alive">
+        </div>
+
+        <button class="singers__form--btn">
+            Agregar
+        </button>
+    </div>
+
+    <div class="singers__list">
+        <div class="singers__list--item" *ngFor="let cantante of cantantes">
+            <div class="head">{{cantante.age}}</div>
+            <div class="content">{{cantante.name}}</div>
+        </div>
+    </div>
 </div>
