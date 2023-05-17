@@ -1,4 +1,4 @@
-interface OptionsQuestion {
+interface Option {
   id: string;
   name: string;
   description?: string;
@@ -10,6 +10,6 @@ export interface Question {
   id: string;
   title: string;
   description: string;
-  options: OptionsQuestion[];
+  options: Option[];
   completed: boolean;
 }

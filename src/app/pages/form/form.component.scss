@@ -106,6 +106,13 @@
           font-size: 24px;
           transition: 0.5s;
 
+          &.selected {
+            opacity: 1;
+            background-color:#fe6188;
+            color: #fff;
+            border-color: #fe6188;
+          }
+
           &:hover {
             opacity: 1;
             background-color:#fff;

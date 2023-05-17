@@ -129,4 +129,15 @@ export class FormComponent implements OnInit {
     
   }
 
+  getAdvantage() {
+    if(this.step == 1) return 20
+    else if (this.step == this.questionsForm.length) return 80;
+    else return this.percentageAdvance
+  }
+
+  selectOption(fatherIndex: number, childIndex: number) {
+    let valueSelected = this.questionsForm[fatherIndex].options[childIndex].selected
+    this.questionsForm[fatherIndex].options[childIndex].selected = !valueSelected;
+  }
+
 }
