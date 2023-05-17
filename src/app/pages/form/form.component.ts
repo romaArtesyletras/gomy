@@ -112,6 +112,7 @@ export class FormComponent implements OnInit {
   }
 
   continue() {
+    this.questionsForm[this.step-1].completed = true;
     this.step += 1;
     this.getPercentage()
   }

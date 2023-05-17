@@ -1,44 +1,46 @@
 <div class="form">
-  <div class="form--logo">
-    <a [routerLink]="['/']"><img src="/assets/sketch_logo.svg" alt="Logo Image" /></a>
-  </div>
-  <div class="form__container">
-    <div class="form__container--content">
+	<div class="form--logo">
+		<a [routerLink]="['/']"><img src="/assets/sketch_logo.svg" alt="Logo Image" /></a>
+	</div>
+	<div class="form__container">
+		<div class="form__container--content">
 
-      <div class="header">
-        <div class="header__steps">
-          <progress [value]="this.percentageAdvance" max="100">{{this.percentageAdvance}}%</progress>
-        </div>
-      </div>
+			<div class="header">
+				
+				<div class="header__steps">
+					<progress [value]="((this.step == 1) ? 20 : this.percentageAdvance)" max="100">{{(this.step == 1 ? 20 : this.percentageAdvance)}}%</progress>
+				</div>
 
-      <div *ngFor="let question of questionsForm; let i = index">
+			</div>
 
-        <div class="question" *ngIf="(i+1) == step && !question.completed">
+			<div *ngFor="let question of questionsForm; let i = index">
 
-          <div class="question__header">
-            <div class="question__header--info">
-              <h2>{{question.title}}</h2>
-              <p>{{question.description}}</p>
-            </div>
-          </div>
-          
-          <div class="question__options" *ngIf="question.options.length > 0">
-            <div class="grid">
-              <a  *ngFor="let option of question.options" class="grid--item">{{option.name}}</a>
-            </div>
-          </div>
+				<div class="question" *ngIf="(i+1) == step && !question.completed">
 
-          <div class="question__continue">
-            <a class="question__continue--button" [routerLink]="['/form']">Continuar</a>
-          </div>
-          
-        </div>
+					<div class="question__header">
+						<div class="question__header--info">
+							<h2>{{question.title}}</h2>
+							<p>{{question.description}}</p>
+						</div>
+					</div>
+					
+					<div class="question__options" *ngIf="question.options.length > 0">
+						<div class="grid">
+							<a  *ngFor="let option of question.options" class="grid--item">{{option.name}}</a>
+						</div>
+					</div>
 
-        
-      </div>
-      
+					<div class="question__continue">
+						<a class="question__continue--button" (click)="continue()">Continuar</a>
+					</div>
+					
+				</div>
 
-    </div>
+				
+			</div>
+			
 
-  </div>
+		</div>
+
+	</div>
 </div>
