@@ -1,7 +1,11 @@
 .form {
 
   &--logo {
-    padding: 32px;
+    padding: 16px;
+
+    img {
+      width: 80px;
+    }
   }
 
   &__container {

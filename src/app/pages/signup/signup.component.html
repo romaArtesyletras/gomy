@@ -1,1 +1,52 @@
-<p>signup works!</p>
+<div class="signup">
+
+  <div class="logo">
+    <a [routerLink]="['/']">
+        <img src="/assets/icons/logo.svg">
+    </a>
+  </div>
+
+  <div class="signup-box">
+    <h2 class="signup-box__title">Ingresa a GOMY</h2>
+    
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-box__form">
+
+      <div class="signup-box__form--group">
+        <input class="signup-box__form--input" type="text" placeholder="Username" formControlName="email">
+      </div>
+  
+      <div class="signup-box__form--group">
+        <input class="signup-box__form--input" type="password" placeholder="Contraseña (6-20 caracteres)" formControlName="password">
+      </div>
+
+      <div class="signup-box__form--group">
+        <input class="signup-box__form--input" type="password" placeholder="Confirmar contraseña" formControlName="password_confirm">
+      </div>
+  
+      <button class="signup-box__form--button" [disabled]="signupForm.invalid">Crear cuenta</button>
+    </form>
+    
+    <div class="signup-box__info">
+      <p class="signup-box__info--text">¿Ya tienes una cuenta? <a class="signup-box__info--signup-link" [routerLink]="'/login'">Ingresar</a></p>
+
+      <label class="signup-box__info--checkbox">
+        <input type="checkbox" class="signup-box__info--checkbox-input">
+        <span class="signup-box__info--checkbox-text">Acepto los <a [routerLink]="'/signup'">Terminos y condiciones</a></span>
+      </label>
+
+    </div>
+
+    <div class="">
+      <p>O registrate con</p>
+    </div>
+    <div class="signup-box__social">
+      <a class="signup-box__social--button">
+        <img src="/assets/icons/google.svg" alt="" srcset="">
+      </a>
+      <a class="signup-box__social--button">
+        <img src="/assets/icons/facebook.svg" alt="" srcset="">
+      </a>
+    </div>
+  </div>
+
+</div>

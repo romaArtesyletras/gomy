@@ -1,9 +1,9 @@
 $color_1: #f2f5f7;
-$color_2: #61DAFB;
-$color_3: #131418;
+$color_2: #fe6188;
+$color_3: #977dd7;
 $font-family_1: sans-serif;
-$background-color_1: #131418;
-$background-color_2: #61DAFB;
+$background-color_1: #977dd7;
+$background-color_2: #fe6188;
 $background-color_3: transparent;
 $background-color_4: #f2f5f7;
 
@@ -29,8 +29,7 @@ $background-color_4: #f2f5f7;
         padding: 1vh 1vw;
         text-align: center;
         img {
-            height: 5rem;
-            width: 5rem;
+            width: 70px;
         }
     }
 
@@ -57,8 +56,8 @@ $background-color_4: #f2f5f7;
                     content: "";
                     display: block;
                     height: 46px;
-                    width: 10px;
-                    background-color: #7a7a7a;
+                    width: 2px;
+                    background-color: #ffffff;
                     position: absolute;
                     transition: all ease-in-out 250ms;
                     margin: -12px 0px 0px -33%;
@@ -135,7 +134,7 @@ $background-color_4: #f2f5f7;
 
         &__links {
             position: fixed;
-            background: #131418;
+            background: #977dd7;
             height: 100vh;
             width: 100%;
             flex-direction: column;
