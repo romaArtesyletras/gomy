@@ -125,4 +125,129 @@
           }
       }
   }
+
+  // &__send-message {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   flex-direction: column;
+  //   text-align: center;
+
+  //   & .icon {
+  //     font-size: 24px;
+  //     margin-bottom: 16px;
+  //   }
+
+  //   & p {
+  //     font-size: 32px;
+  //     margin-bottom: 16px;
+  //   }
+  // }
+
+  &__send {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+
+    &--message {
+      display: inline-block;
+      position: relative;
+      padding:  10px 20px;
+      color: #000;
+      box-sizing: border-box;
+      max-width: 600px;
+      min-width: 80px;
+      min-height: 38px;
+      margin-top: 10%;
+
+      p {
+        font-size: 32px;
+      }
+  
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border: 4px solid #aa96da;
+        border-radius: 2px;
+        box-sizing: border-box;
+        clip-path: polygon(0% 105%, 0% 0%, 105% 0%, 105% 105%, 43px 105%, 43px 80%, 21px 80%, 21px 105%);
+      }
+  
+      &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 29px;
+        height: 20px;
+        background: #aa96da;
+        top: calc(100% - 3px);
+        left: 20px;
+        box-sizing: border-box;
+        clip-path: polygon(0 0, 0% 100%, 100% 0%, calc(100% - 6px) 0, 3px calc(100% - 6px), 3px 0);
+      }
+    }
+
+    &--revealing {
+      transform: scale(1);
+  
+      & .box {
+        opacity: 0;
+        animation: scaleUp .3s cubic-bezier(0.155, 0.850, 0.420, 1.000) forwards;
+      }
+  
+      &.out {
+        animation: quickScaleDown 0s .5s linear forwards;
+  
+        & .box {
+          animation: scaleDown .5s cubic-bezier(0.155, 0.850, 0.420, 1.000) forwards;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(.8) translateY(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1) translateY(0px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(.8) translateY(1000px);
+    opacity: 0;
+  }
+}
+
+@keyframes quickScaleDown {
+  0% {
+    transform: scale(1);
+  }
+
+  99.9% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
 }
