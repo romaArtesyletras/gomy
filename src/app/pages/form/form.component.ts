@@ -16,15 +16,21 @@ export class FormComponent implements OnInit {
 
   infoSendIt!: boolean
 
+  questionsAnswered: any[] = []
+
   constructor(
     private storageService: StorageService
   ){}
 
   ngOnInit(): void {
     let questionsFormSaved = this.storageService.getData("questionsSaved")
-    
+    let stepSaved = this.storageService.getData("stepSaved")
+
     if(questionsFormSaved) {
+      // console.log("here > ", questionsFormSaved)
+      // console.log("step > ", stepSaved)
       this.questionsForm = questionsFormSaved
+      this.step = parseInt(stepSaved)
     }else {
       this.questionsForm = [
         {
@@ -83,6 +89,7 @@ export class FormComponent implements OnInit {
             },
           ]
         },
+        // Second
         {
           id: uuidv4(),
           title: "Especialidad del entrenador",
@@ -148,16 +155,20 @@ export class FormComponent implements OnInit {
     this.questionsForm.map(q => { 
       if(q.completed) countCompleted++
     })
-    console.log(countCompleted)
+    // console.log(countCompleted)
     
     this.percentageAdvance = 100 * (countCompleted / this.questionsForm.length)
-    console.log("this.percentageAdvance > ", this.percentageAdvance)
+    // console.log("this.percentageAdvance > ", this.percentageAdvance)
 
-    if(this.percentageAdvance == 100) this.infoSendIt = true
+    if(this.percentageAdvance == 100) {
+      this.infoSendIt = true
+      this.getOptionsSelected()
+    }
 
     let actualQuestionsForm = this.questionsForm
 
     this.storageService.saveData("questionsSaved", actualQuestionsForm)
+    this.storageService.saveStr("stepSaved", this.step.toString())
     
   }
 
@@ -170,6 +181,31 @@ export class FormComponent implements OnInit {
   selectOption(fatherIndex: number, childIndex: number) {
     let valueSelected = this.questionsForm[fatherIndex].options[childIndex].selected
     this.questionsForm[fatherIndex].options[childIndex].selected = !valueSelected
+  }
+
+  async getOptionsSelected() {
+
+    await this.questionsForm.map((pf: Question) => {
+      var answers:any[] = []
+      var answer:any = {
+        id: null,
+        options: []
+      }
+
+      if(pf.completed) {
+        let parentId = pf.id
+        answer.id = parentId
+        for (let e = 0; e < pf.options.length; e++) {
+          if(pf.options[e]['selected']){
+            answer.options.push(pf.options[e])
+          }
+        }
+        answers.push(answer)
+        this.questionsAnswered.push(answers) 
+      }
+    })
+    console.log("this.questionsAnswered > ",this.questionsAnswered)
+
   }
 
 }

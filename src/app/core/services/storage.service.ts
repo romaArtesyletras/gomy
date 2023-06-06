@@ -15,6 +15,10 @@ export class StorageService {
     localStorage.setItem(name, jsonData);
   }
 
+  saveStr(name:string, data: string): void {
+    localStorage.setItem(name, data);
+  }
+
   // Get data from storage
   getData(name:string): any {
     const jsonData = localStorage.getItem(name);
@@ -22,6 +26,10 @@ export class StorageService {
       return JSON.parse(jsonData);
     }
     return null;
+  }
+
+  getDataStr(name: string) {
+    return localStorage.getItem(name);
   }
 
   // Clear stored data
