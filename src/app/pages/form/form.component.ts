@@ -11,7 +11,9 @@ import { v4 as uuidv4 } from 'uuid'
 export class FormComponent implements OnInit {
 
   questionsForm!: Question[]
+
   step: number = 1
+
   percentageAdvance: number = 0
 
   infoSendIt!: boolean
@@ -31,7 +33,7 @@ export class FormComponent implements OnInit {
       // console.log("step > ", stepSaved)
       this.questionsForm = questionsFormSaved
       this.step = parseInt(stepSaved)
-    }else {
+    } else {
       this.questionsForm = [
         {
           id: uuidv4(),
